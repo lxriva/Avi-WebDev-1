@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>N's Zoroark ex Decklist</title>
+    <title>Deck 3 - Dragapult ex Decklist</title>
     <style>
         h1 {
             font-size: 3rem;
@@ -71,7 +71,7 @@
 
 <body>
     <header>
-        <h1>N's Zoroark ex Deck</h1>
+        <h1>Deck 3 - Dragapult ex</h1>
     </header>
     <section class="card-grid" id="card-grid"></section>
     <footer>
@@ -84,37 +84,39 @@
     </footer>
 
     <script>
+        const apiKey = "500a18de-ac30-4392-8295-b867c00917df";
+
         const cards = [
-            { id: 'sv9-98', quantity: 3 },    // N's Zoroark ex
-            { id: 'sv9-97', quantity: 4 },    // N's Zorua
-            { id: 'sv9-27', quantity: 2 },    // N's Darmanitan
-            { id: 'sv9-26', quantity: 2 },    // N's Darumaka
-            { id: 'sv8pt5-4', quantity: 1 },  // Budew
-            { id: 'sv9-8', quantity: 1 },     // Maractus
-            { id: 'sv9-116', quantity: 1 },   // N's Reshiram
-            { id: 'sv6pt5-39', quantity: 1 }, // Pecharunt ex
-            { id: 'sv6pt5-38', quantity: 1 }, // Fezandipiti ex
-            { id: 'sv9-153', quantity: 4 },   // N's PP Up
-            { id: 'sv1-181', quantity: 4 },   // Nest Ball
-            { id: 'sv1-196', quantity: 3 },   // Ultra Ball
-            { id: 'sv5-144', quantity: 3 },   // Buddy-Buddy Poffin
-            { id: 'sv6pt5-61', quantity: 2 }, // Night Stretcher
-            { id: 'sv4-163', quantity: 1 },   // Earthen Vessel
-            { id: 'sv4-160', quantity: 1 },   // Counter Catcher
-            { id: 'sv1-166', quantity: 4 },   // Arven
-            { id: 'sv2-185', quantity: 4 },   // Iono
-            { id: 'sv2-172', quantity: 2 },   // Boss' Orders
-            { id: 'sv6pt5-55', quantity: 1 }, // Binding Mochi
-            { id: 'sv4-178', quantity: 1 },   // Technical Machine: Evolution
-            { id: 'sv1-169', quantity: 1 },   // Defiance Band
-            { id: 'sv9-152', quantity: 2 },   // N's Castle
-            { id: 'sv3-192', quantity: 1 },   // Pokémon League Headquarters
-            { id: 'sv6-165', quantity: 1 },   // Unfair Stamp
-            { id: 'sv2-192', quantity: 2 },   // Reversal Energy
-            { id: 'sve-15', quantity: 7 }     // Basic Darkness Energy
+            { id: 'sv6-130', quantity: 3 },  // Dragapult ex - Twilight Masquerade
+            { id: 'sv6-129', quantity: 4 },  // Drakloak - Twilight Masquerade
+            { id: 'sv6-128', quantity: 4 },  // Dreepy - Twilight Masquerade
+            { id: 'sv8pt5-37', quantity: 1 },   // Dusknoir - Prismatic Evolution
+            { id: 'sv8pt5-36', quantity: 2 },   // Dusclops - Prismatic Evolution
+            { id: 'sv8pt5-35', quantity: 2 },   // Duskull - Prismatic Evolution
+            { id: 'sv8pt5-4', quantity: 2 },    // Budew - Prismatic Evolution
+            { id: 'sv6-141', quantity: 1 },  // Bloodmoon Ursaluna ex - Twilight Masquerade
+            { id: 'sv1-118', quantity: 1 },  // Hawlucha - Scarlet & Violet
+            { id: 'sv6pt5-38', quantity: 1 },// Fezandipiti ex - Shrouded Fable
+            { id: 'sv6-95', quantity: 1 },   // Munkidori - Twilight Masquerade
+            { id: 'sv1-196', quantity: 4 },  // Ultra Ball - Scarlet & Violet
+            { id: 'sv5-144', quantity: 4 },  // Buddy-Buddy Poffin - Twilight Masquerade
+            { id: 'sv4-160', quantity: 3 },  // Counter Catcher - Paradox Rift
+            { id: 'sv6pt5-61', quantity: 3 },// Night Stretcher - Shrouded Fable
+            { id: 'sv1-194', quantity: 1 },  // Switch - Scarlet & Violet
+            { id: 'sv4-163', quantity: 1 },  // Earthen Vessel - Paradox Rift
+            { id: 'sv2-185', quantity: 4 },  // Iono - Paldea Evolved
+            { id: 'sv1-175', quantity: 2 },  // Jacq - Scarlet & Violet
+            { id: 'sv3-186', quantity: 2 },  // Arven - Obsidian Flames
+            { id: 'sv2-172', quantity: 2 },  // Boss’s Orders - Paldea Evolved
+            { id: 'sv9-155', quantity: 2 },  // Professor’s Research - Journey Together
+            { id: 'sv4-166', quantity: 1 },  // Luxurious Cape - Paradox Rift
+            { id: 'sv5-159', quantity: 1 },  // Rescue Board - Twilight Masquerade
+            { id: 'sv6-165', quantity: 1 },  // Unfair Stamp - Twilight Masquerade
+            { id: 'sv2-191', quantity: 3 },  // Luminous Energy - Paldea Evolved
+            { id: 'sve-10', quantity: 2 },   // Basic Fire Energy
+            { id: 'sve-13', quantity: 2 }    // Basic Psychic Energy
         ];
 
-        const apiKey = "500a18de-ac30-4392-8295-b867c00917df";
         const grid = document.getElementById("card-grid");
 
         async function fetchCardById(cardId) {

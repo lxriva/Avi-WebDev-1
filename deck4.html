@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>N's Zoroark ex Decklist</title>
+    <title>Deck 4 - Raging Bolt ex & Teal Mask Ogerpon ex Decklist</title>
     <style>
         h1 {
             font-size: 3rem;
@@ -71,7 +71,7 @@
 
 <body>
     <header>
-        <h1>N's Zoroark ex Deck</h1>
+        <h1>Deck 4 - Raging Bolt ex & Teal Mask Ogerpon ex</h1>
     </header>
     <section class="card-grid" id="card-grid"></section>
     <footer>
@@ -84,37 +84,42 @@
     </footer>
 
     <script>
+        const apiKey = "500a18de-ac30-4392-8295-b867c00917df";
+
         const cards = [
-            { id: 'sv9-98', quantity: 3 },    // N's Zoroark ex
-            { id: 'sv9-97', quantity: 4 },    // N's Zorua
-            { id: 'sv9-27', quantity: 2 },    // N's Darmanitan
-            { id: 'sv9-26', quantity: 2 },    // N's Darumaka
-            { id: 'sv8pt5-4', quantity: 1 },  // Budew
-            { id: 'sv9-8', quantity: 1 },     // Maractus
-            { id: 'sv9-116', quantity: 1 },   // N's Reshiram
-            { id: 'sv6pt5-39', quantity: 1 }, // Pecharunt ex
-            { id: 'sv6pt5-38', quantity: 1 }, // Fezandipiti ex
-            { id: 'sv9-153', quantity: 4 },   // N's PP Up
-            { id: 'sv1-181', quantity: 4 },   // Nest Ball
-            { id: 'sv1-196', quantity: 3 },   // Ultra Ball
-            { id: 'sv5-144', quantity: 3 },   // Buddy-Buddy Poffin
-            { id: 'sv6pt5-61', quantity: 2 }, // Night Stretcher
-            { id: 'sv4-163', quantity: 1 },   // Earthen Vessel
-            { id: 'sv4-160', quantity: 1 },   // Counter Catcher
-            { id: 'sv1-166', quantity: 4 },   // Arven
-            { id: 'sv2-185', quantity: 4 },   // Iono
-            { id: 'sv2-172', quantity: 2 },   // Boss' Orders
-            { id: 'sv6pt5-55', quantity: 1 }, // Binding Mochi
-            { id: 'sv4-178', quantity: 1 },   // Technical Machine: Evolution
-            { id: 'sv1-169', quantity: 1 },   // Defiance Band
-            { id: 'sv9-152', quantity: 2 },   // N's Castle
-            { id: 'sv3-192', quantity: 1 },   // Pokémon League Headquarters
-            { id: 'sv6-165', quantity: 1 },   // Unfair Stamp
-            { id: 'sv2-192', quantity: 2 },   // Reversal Energy
-            { id: 'sve-15', quantity: 7 }     // Basic Darkness Energy
+            { id: 'sv5-123', quantity: 3 },    // Raging Bolt ex (Twilight Masquerade)
+            { id: 'sv6-25', quantity: 3 },     // Teal Mask Ogerpon ex (Twilight Masquerade)
+            { id: 'sv7-115', quantity: 3 },    // Noctowl
+            { id: 'sv7-114', quantity: 2 },    // Hoothoot (Scarlet & Violet 6: Stellar Crown)
+            { id: 'sv8pt5-77', quantity: 1 },     // Hoothoot (Prismatic Evolution)
+            { id: 'sv7-118', quantity: 2 },    // Fan Rotom
+            { id: 'sv7-111', quantity: 1 },    // Raging Bolt (Scarlet & Violet 6)
+            { id: 'sv4-107', quantity: 1 },    // Slither Wing (Paradox Rift)
+            { id: 'sv6pt5-38', quantity: 1 },  // Fezandipiti ex (Shrouded Fable)
+            { id: 'sv3pt5-151', quantity: 1 },   // Mew ex (151 Collection)
+            { id: 'sv8-76', quantity: 1 },     // Latias ex (Shiny Treasure ex / Surging Sparks)
+            { id: 'sv2-169', quantity: 1 },    // Squawkabilly ex (Paldea Evolved)
+            { id: 'sv3pt5-132', quantity: 1 },   // Ditto (151 Collection)
+            { id: 'sv1-181', quantity: 4 },    // Nest Ball (Scarlet & Violet)
+            { id: 'sv1-196', quantity: 3 },    // Ultra Ball (Scarlet & Violet)
+            { id: 'sv4-163', quantity: 3 },    // Earthen Vessel (Paradox Rift)
+            { id: 'sv6pt5-61', quantity: 2 },  // Night Stretcher (Shrouded Fable)
+            { id: 'sv1-171', quantity: 1 },    // Energy Retrieval (Scarlet & Violet)
+            { id: 'sv1-182', quantity: 1 },    // Pal Pad (Scarlet & Violet)
+            { id: 'sv4-170', quantity: 4 },    // Professor Sada’s Vitality (Paradox Rift)
+            { id: 'sv7-133', quantity: 2 },    // Crispin (Stellar Crown)
+            { id: 'sv2-172', quantity: 1 },    // Boss’s Orders (Paldea Evolved)
+            { id: 'sv1-176', quantity: 1 },    // Judge (Scarlet & Violet)
+            { id: 'sv4-171', quantity: 1 },    // Professor Turo’s Scenario (Paradox Rift)
+            { id: 'sv2-173', quantity: 1 },    // Bravery Charm (Paldea Evolved)
+            { id: 'sv7-131', quantity: 2 },    // Area Zero Underdepths (Stellar Crown)
+            { id: 'sv6-153', quantity: 1 },    // Jamming Tower (Twilight Masquerade)
+            { id: 'sv5-157', quantity: 1 },    // Prime Catcher (Twilight Masquerade)
+            { id: 'sve-9', quantity: 5 },      // Basic Grass Energy
+            { id: 'sve-14', quantity: 3 },     // Basic Fighting Energy
+            { id: 'sve-12', quantity: 3 }      // Basic Lightning Energy
         ];
 
-        const apiKey = "500a18de-ac30-4392-8295-b867c00917df";
         const grid = document.getElementById("card-grid");
 
         async function fetchCardById(cardId) {

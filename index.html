@@ -1,10 +1,10 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avi's Pokémon TCG Deck Database</title>
-
     <style>
         h1 {
             font-size: 3rem;
@@ -17,7 +17,7 @@
         body {
             background-image: url('https://img.pikbest.com/background/20220119/simple-white-geometric-lines-shading-texture-background_6219942.jpg!sw800');
             background-size: auto;
-            font-size: 20px
+            font-size: 20px;
         }
 
         img {
@@ -41,8 +41,8 @@
         }
 
         .navbar3 {
-            text-align: center; 
-            margin-top: 20px;   
+            text-align: center;
+            margin-top: 20px;
         }
 
         .navbar a {
@@ -50,9 +50,7 @@
             color: black;
             text-align: left;
             padding: 14px 14px;
-            text-emphasis-color: black;
             text-decoration: none;
-            text-decoration-color: black;
             font-weight: bold;
             font-size: 1.4rem;
         }
@@ -62,9 +60,7 @@
             color: black;
             text-align: center;
             padding: 14px 14px;
-            text-emphasis-color: black;
             text-decoration: none;
-            text-decoration-color: black;
             font-weight: bold;
             font-size: 1.4rem;
         }
@@ -73,62 +69,46 @@
             background-color: rgba(189, 68, 68, 0.7);
             border-radius: 20px;
         }
-    </style>
 
+        .preview {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding-left: 20px;
+        }
+
+        .preview img {
+            width: 190px;
+            height: auto;
+        }
+    </style>
 </head>
 
 <body>
     <nav class="navbar2">
-        <header> <!--Introduction to Webpage-->
+        <header>
             <h1>Welcome to Avi's Pokémon TCG Deck Database!</h1>
-            <p1>This is a personal database I use to store my Pokemon card deck-lists. I built this project to merge the
-                two
-                worlds of my personal hobbies and work related to my university major. I hope to accomplish great things
-                by
-                undertaking this personal project!</p1>
+            <p1>This is a personal database I use to store my Pokémon card deck-lists.</p1>
         </header>
     </nav>
 
-
     <nav class="navbar">
-
         <a href="deck1.html">
             Deck 1 - Hop's Zacian ex
-            <figure>
-                <img
-                    src="https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/SV09/SV09_EN_111.png">
-                <img
-                    src="https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/SV08/SV08_EN_130.png">
-                <img
-                    src="https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/SV09/SV09_EN_117.png">
-                <img
-                    src="https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/SV09/SV09_EN_138.png">
-                <img
-                    src="https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/SV09/SV09_EN_148.png">
-                <img
-                    src="https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/SV09/SV09_EN_154.png">
-            </figure>
+            <div class="preview" id="preview-deck1"></div>
         </a>
         <a href="deck2.html">
             Deck 2 - N's Zoroark ex
-            <figure>
-                <img
-                    src="https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/SV09/SV09_EN_98.png">
-                <img
-                    src="https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/SV09/SV09_EN_27.png">
-                <img
-                    src="https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/SV09/SV09_EN_116.png">
-                <img
-                    src="https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/SV6PT5/SV6PT5_EN_39.png">
-                <img
-                    src="https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/SV09/SV09_EN_153.png">
-                <img
-                    src="https://assets.pokemon.com/static-assets/content-assets/cms2/img/cards/web/SV09/SV09_EN_152.png">
-            </figure>
+            <div class="preview" id="preview-deck2"></div>
         </a>
-
-        <a>Deck 3 - Title & Card images to be added soon.</a>
-        <a>Deck 4 - Title & Card images to be added soon.</a>
+        <a href="deck3.html">
+            Deck 3 - Dragapult ex
+            <div class="preview" id="preview-deck3"></div>
+        </a>
+        <a href="deck4.html">
+            Deck 4 - Raging Bolt ex & Teal Mask Ogerpon ex
+            <div class="preview" id="preview-deck4"></div>
+        </a>
     </nav>
 
     <footer>
@@ -138,4 +118,49 @@
             <a href="https://github.com/lxriva" target="_blank">My GitHub Page</a>
         </nav>
     </footer>
+
+    <script>
+        const apiKey = "500a18de-ac30-4392-8295-b867c00917df";
+
+        const previewDecks = {
+            "preview-deck1": [
+                'sv9-111', 'sv8-130', 'sv9-136', 'sv9-117', 'sv9-138', 'sv9-154'
+            ],
+            "preview-deck2": [
+                'sv9-98', 'sv9-27', 'sv9-116', 'sv9-153', 'sv9-152', 'sv6-165'
+            ],
+            "preview-deck3": [
+                'sv6-130', 'sv8pt5-37', 'sv6-95', 'sv1-118', 'sv4-166', 'sv6-165'
+            ],
+            "preview-deck4": [
+                'sv5-123', 'sv6-25', 'sv7-115', 'sv7-114', 'sv7-131', 'sv5-157'
+            ]
+        };
+
+        async function fetchCardById(id) {
+            const res = await fetch(`https://api.pokemontcg.io/v2/cards/${id}`, {
+                headers: { 'X-Api-Key': apiKey }
+            });
+            const data = await res.json();
+            return data.data?.images?.small || null;
+        }
+
+        async function loadPreviews() {
+            for (const [containerId, ids] of Object.entries(previewDecks)) {
+                const container = document.getElementById(containerId);
+                for (const id of ids) {
+                    const imageUrl = await fetchCardById(id);
+                    if (!imageUrl) continue;
+                    const img = document.createElement('img');
+                    img.src = imageUrl;
+                    img.alt = id;
+                    container.appendChild(img);
+                }
+            }
+        }
+
+        loadPreviews();
+    </script>
 </body>
+
+</html>
