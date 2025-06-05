@@ -45,13 +45,13 @@ The project was built to practice:
 ---
 
 ## 🗂 File Structure
+
 ├── index.html # Main homepage with previews
 ├── deck1.html # Hop's Zacian ex deck
 ├── deck2.html # N's Zoroark ex deck
 ├── deck3.html # Dragapult ex control deck
 ├── deck4.html # Raging Bolt / Ogerpon deck
 └── README.md # This file
-
 
 ---
 
@@ -67,5 +67,5 @@ Each deck includes a JavaScript array of card objects like:
 ```js
 { id: "sv5-130", quantity: 3 }  // Dragapult ex
 
-These IDs are passed to the API to load accurate card images.
 
+These IDs are passed to the API to load accurate card images.
